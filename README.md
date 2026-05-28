@@ -2,6 +2,15 @@
 
 **VlogToBlog** is a premium, modern full-stack web application that converts YouTube video URLs into highly structured, search-engine-optimized, and readable blog posts. It uses a Node.js backend to scrape transcripts and Google's **Gemini 1.5 Flash** AI to synthesize professional content.
 
+
+---
+## ScreenShots
+
+<img width="1919" height="992" alt="Screenshot 2026-05-29 at 12 16 57 AM" src="https://github.com/user-attachments/assets/872688da-e9c0-4db1-9b65-245baf588e5c" />
+<img width="1917" height="992" alt="Screenshot 2026-05-29 at 12 18 01 AM" src="https://github.com/user-attachments/assets/6a437695-1db6-4248-a470-c21e169aff32" />
+<img width="1914" height="629" alt="Screenshot 2026-05-29 at 12 18 11 AM" src="https://github.com/user-attachments/assets/18b5b59f-52d5-4560-a6ec-b9ad2cb8271e" />
+<img width="1919" height="991" alt="Screenshot 2026-05-29 at 12 17 21 AM" src="https://github.com/user-attachments/assets/29dee744-6d9f-420a-a530-1e7b066913a8" />
+
 ---
 
 ## 🌟 Key Features

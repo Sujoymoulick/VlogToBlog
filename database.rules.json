@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "drafts": {
+      "$userId": {
+        ".read": "auth != null && auth.uid === $userId",
+        ".write": "auth != null && auth.uid === $userId"
+      }
+    },
+    "settings": {
+      "$userId": {
+        ".read": "auth != null && auth.uid === $userId",
+        ".write": "auth != null && auth.uid === $userId"
+      }
+    }
+  }
+}

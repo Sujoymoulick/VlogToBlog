@@ -1,0 +1,242 @@
+/* Swiss Style Authentication Page Styles */
+.swiss-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #FAF6F0;
+  color: #111111;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 2rem 1.5rem;
+}
+
+.swiss-login-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #FFFFFF;
+  border: 2px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiss-login-card:hover {
+  box-shadow: 8px 8px 0px #111111;
+  transform: translate(-2px, -2px);
+}
+
+.swiss-login-header {
+  text-align: center;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 1.5rem;
+}
+
+.swiss-login-logo {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  color: #111111;
+  margin-bottom: 0.5rem;
+}
+
+.swiss-login-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #E63E26;
+}
+
+/* Tab toggle styles */
+.swiss-login-tabs {
+  display: flex;
+  border: 2px solid #111111;
+  background-color: #FAF6F0;
+}
+
+.swiss-login-tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  color: #111111;
+  transition: all 0.2s ease;
+}
+
+.swiss-login-tab-btn:not(:last-child) {
+  border-right: 2px solid #111111;
+}
+
+.swiss-login-tab-btn:hover {
+  background-color: #ffffff;
+}
+
+.swiss-login-tab-btn.active {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Form inputs styling */
+.swiss-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.swiss-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.swiss-form-label {
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #555555;
+}
+
+.swiss-form-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #FAF6F0;
+  border: 2px solid #111111;
+  color: #111111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.swiss-form-input:focus {
+  border-color: #E63E26;
+  box-shadow: 2px 2px 0px #111111;
+}
+
+/* Button UI */
+.swiss-btn-primary {
+  width: 100%;
+  background-color: #E63E26;
+  color: #ffffff;
+  border: 2px solid #111111;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.swiss-btn-primary:hover:not(:disabled) {
+  background-color: #111111;
+  color: #ffffff;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.swiss-btn-primary:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #111111;
+}
+
+.swiss-btn-primary:disabled {
+  background-color: #FAF6F0;
+  color: #767676;
+  border-color: #767676;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Divider block */
+.swiss-login-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #767676;
+  margin: 0.5rem 0;
+}
+
+.swiss-login-divider::before,
+.swiss-login-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background-color: #111111;
+}
+
+/* Social & Guest Buttons */
+.swiss-btn-social {
+  width: 100%;
+  background-color: #ffffff;
+  color: #111111;
+  border: 2px solid #111111;
+  padding: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.swiss-btn-social:hover:not(:disabled) {
+  background-color: #FAF6F0;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.swiss-btn-social:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #111111;
+}
+
+.swiss-btn-social:disabled {
+  background-color: #FAF6F0;
+  color: #767676;
+  border-color: #767676;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.swiss-btn-social-icon {
+  font-size: 1.1rem;
+}
+
+/* Alert error block */
+.swiss-login-error {
+  background-color: #FFF0EE;
+  border: 2px solid #111111;
+  color: #991B1B;
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 2px 2px 0px #111111;
+}
+
+@media (max-width: 480px) {
+  .swiss-login-card {
+    padding: 2.25rem 1.5rem;
+  }
+}

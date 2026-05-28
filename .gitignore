@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.npm-cache/
+.npm-logs/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Firebase files (except rules and config)
+.firebase/
+firebase-debug.log
+.firebaserc

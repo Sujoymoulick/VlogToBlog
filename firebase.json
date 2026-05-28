@@ -1,0 +1,18 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "auth": {
+    "providers": {
+      "anonymous": true,
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "VlogToBlog App",
+        "supportEmail": "support@vlogtoblog.app"
+      }
+    }
+  }
+}

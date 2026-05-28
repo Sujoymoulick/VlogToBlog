@@ -1,0 +1,817 @@
+/* Swiss Style Landing Page CSS */
+
+.swiss-landing {
+  --swiss-bg: #FAF6F0;
+  --swiss-red: #E63E26;
+  --swiss-black: #111111;
+  --swiss-gray: #555555;
+  --swiss-white: #FFFFFF;
+  --swiss-border: 1px solid #111111;
+  --swiss-border-thick: 2px solid #111111;
+
+  background-color: var(--swiss-bg);
+  color: var(--swiss-black);
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.swiss-landing * {
+  box-sizing: border-box;
+}
+
+/* Nav styles */
+
+/* Global hover effect for all interactive elements */
+.swiss-landing *:hover {
+  filter: brightness(1.07);
+  transition: filter 0.2s ease;
+}
+.swiss-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--swiss-border-thick);
+  padding: 1.5rem 3rem;
+  background-color: var(--swiss-bg);
+  z-index: 10;
+}
+
+.swiss-nav-logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--swiss-black);
+  user-select: none;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+  cursor: pointer;
+}
+
+.swiss-nav-logo:hover {
+  color: var(--swiss-red);
+  transform: scale(1.04);
+}
+
+.swiss-nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.swiss-nav-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--swiss-gray);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swiss-nav-link:hover {
+  color: var(--swiss-black);
+}
+
+.swiss-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--swiss-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swiss-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.swiss-nav-btn {
+  background-color: var(--swiss-black);
+  color: var(--swiss-bg);
+  border: none;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 3px 3px 0 var(--swiss-red);
+}
+
+.swiss-nav-btn:hover {
+  background-color: var(--swiss-red);
+  color: var(--swiss-white);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--swiss-black);
+}
+
+.swiss-nav-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--swiss-black);
+}
+
+/* Desktop only helper to override display */
+.desktop-only {
+  display: flex !important;
+}
+button.desktop-only {
+  display: block !important;
+}
+
+/* Mobile 3-Dot Toggle Button */
+.swiss-nav-mobile-toggle {
+  display: none;
+}
+
+/* Hero Section: Asymmetric grid columns */
+.swiss-hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  border-bottom: var(--swiss-border-thick);
+  min-height: 520px;
+}
+
+/* Left Hero Block */
+.swiss-hero-left {
+  background-color: var(--swiss-red);
+  color: var(--swiss-white);
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: var(--swiss-border-thick);
+  position: relative;
+  overflow: hidden;
+}
+
+.swiss-hero-left:hover {
+  filter: brightness(1.07);
+}
+
+.swiss-hero-left h1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 2.2rem;
+}
+
+.swiss-reveal-line {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiss-reveal-text {
+  display: block;
+  transform: translateY(102%);
+  animation: reveal-slide-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes reveal-slide-up {
+  0% {
+    transform: translateY(102%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.swiss-hero-left p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.45;
+  opacity: 0.95;
+  max-width: 540px;
+  margin-bottom: 3.5rem;
+}
+
+.swiss-hero-left-btn {
+  align-self: flex-start;
+  background-color: var(--swiss-white);
+  color: var(--swiss-red);
+  border: none;
+  padding: 1.25rem 2.75rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 5px 5px 0 var(--swiss-black);
+}
+
+.swiss-hero-left-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--swiss-black);
+  background-color: var(--swiss-black);
+  color: var(--swiss-white);
+}
+
+.swiss-hero-left-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--swiss-black);
+}
+
+/* Right Hero Block */
+}
+
+/* Hover effect for hero right block */
+.swiss-hero-right:hover {
+  filter: brightness(1.07);
+}
+
+/* Curved block mimicking Swiss Style reference image */
+.swiss-hero-curved-graphic {
+  background-color: var(--swiss-red);
+  color: var(--swiss-white);
+  padding: 3.5rem 3rem;
+  border-radius: 120px 0 0 120px;
+  margin-right: -4rem; /* Beautiful negative margin bleed */
+  box-shadow: -5px 5px 0 var(--swiss-black);
+  border: var(--swiss-border-thick);
+  border-right: none;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiss-hero-curved-graphic:hover {
+  transform: translateX(-8px);
+}
+
+.swiss-hero-curved-graphic p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.swiss-typing-cursor {
+  font-weight: 300;
+  color: var(--swiss-white);
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Typographic Sub-footer (Endless Smooth Marquee) */
+.swiss-marquee-container {
+  overflow: hidden;
+  border-bottom: var(--swiss-border-thick);
+  background-color: var(--swiss-bg);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  user-select: none;
+  width: 100%;
+}
+
+.swiss-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+  padding-left: 1.5rem;
+}
+
+.swiss-marquee-item {
+  font-size: clamp(4rem, 9.5vw, 9.5rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--swiss-red);
+  margin: 0;
+}
+
+.swiss-marquee-dot {
+  font-size: clamp(3rem, 7.5vw, 7.5rem);
+  font-weight: 900;
+  color: var(--swiss-black);
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Features Grid */
+.swiss-features-section {
+  background-color: var(--swiss-bg);
+  border-bottom: var(--swiss-border-thick);
+}
+
+.swiss-features-header {
+  border-bottom: var(--swiss-border);
+  padding: 4rem 3rem;
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 3rem;
+}
+
+.swiss-features-header h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.swiss-features-header p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--swiss-gray);
+  max-width: 480px;
+  align-self: end;
+  margin: 0;
+}
+
+.swiss-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.swiss-feature-card {
+  padding: 4.5rem 3rem;
+  border-right: var(--swiss-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 390px;
+  background-color: var(--swiss-bg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.swiss-feature-card:last-child {
+  border-right: none;
+}
+
+.swiss-feature-card:hover {
+  background-color: var(--swiss-white);
+  transform: translateY(-6px);
+  z-index: 2;
+  box-shadow: -4px 4px 0 var(--swiss-black);
+}
+
+.swiss-feature-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--swiss-red);
+  letter-spacing: -0.02em;
+  margin-bottom: 3.5rem;
+}
+
+.swiss-feature-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.swiss-feature-desc {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--swiss-gray);
+  margin: 0;
+}
+
+/* How It Works Section */
+.swiss-steps-section {
+  padding: 6rem 3rem;
+  border-bottom: var(--swiss-border-thick);
+  background-color: var(--swiss-white);
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 4rem;
+}
+
+.swiss-steps-left h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.swiss-steps-left p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--swiss-gray);
+  max-width: 340px;
+  margin: 0;
+}
+
+.swiss-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.swiss-step-card {
+  border: var(--swiss-border-thick);
+  padding: 2.5rem 2rem;
+  background-color: var(--swiss-bg);
+  box-shadow: 4px 4px 0 var(--swiss-black);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiss-step-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--swiss-black);
+  background-color: var(--swiss-white);
+}
+
+.swiss-step-badge {
+  background-color: var(--swiss-red);
+  color: var(--swiss-white);
+  display: inline-block;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.swiss-step-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.swiss-step-desc {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--swiss-gray);
+  margin: 0;
+}
+
+/* Call to Action Section */
+.swiss-cta-section {
+  background-color: var(--swiss-black);
+  color: var(--swiss-white);
+  padding: 7rem 3rem;
+  text-align: center;
+  border-bottom: var(--swiss-border-thick);
+}
+
+.swiss-cta-section h2 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  line-height: 0.95;
+  margin-top: 0;
+}
+
+.swiss-cta-section p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  opacity: 0.85;
+  max-width: 620px;
+  margin: 0 auto 3.5rem auto;
+  line-height: 1.5;
+}
+
+.swiss-cta-btn {
+  background-color: var(--swiss-red);
+  color: var(--swiss-white);
+  border: none;
+  padding: 1.35rem 3.5rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 5px 5px 0 var(--swiss-white);
+}
+
+.swiss-cta-btn:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 9px 9px 0 var(--swiss-white);
+  background-color: var(--swiss-white);
+  color: var(--swiss-black);
+}
+
+.swiss-cta-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--swiss-white);
+}
+
+/* Footer Credit */
+.swiss-footer {
+  padding: 3rem;
+  background-color: var(--swiss-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--swiss-gray);
+}
+
+.swiss-footer p {
+  margin: 0;
+}
+
+/* BACK TO HOME SWITCHER (App header visual compatibility) */
+.swiss-back-home-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.swiss-back-home-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsiveness rules */
+@media (max-width: 1024px) {
+  .swiss-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .swiss-hero-left {
+    border-right: none;
+    border-bottom: var(--swiss-border-thick);
+    min-height: 420px;
+    padding: 4rem 3rem;
+  }
+  .swiss-hero-right {
+    min-height: 400px;
+    padding: 4rem 3rem;
+  }
+  .swiss-hero-curved-graphic {
+    margin-right: 0;
+    border-radius: 80px 0 0 80px;
+  }
+  .swiss-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .swiss-feature-card {
+    border-bottom: var(--swiss-border);
+  }
+  .swiss-feature-card:nth-child(2) {
+    border-right: none;
+  }
+  .swiss-feature-card:nth-child(3) {
+    border-bottom: none;
+  }
+  .swiss-feature-card:last-child {
+    border-bottom: none;
+  }
+  .swiss-steps-section {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 5rem 3rem;
+  }
+  .swiss-steps-left p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .swiss-nav-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 1.45rem;
+    color: var(--swiss-black);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .swiss-nav-mobile-toggle:hover {
+    color: var(--swiss-red);
+  }
+
+  .swiss-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    position: relative;
+  }
+
+  /* Landing page mobile dropdown card styles */
+  .swiss-nav-mobile-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(26, 27, 38, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 100;
+  }
+
+  .swiss-nav-mobile-dropdown {
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 1.5rem;
+    width: 240px;
+    background-color: var(--swiss-white);
+    border: var(--swiss-border-thick);
+    box-shadow: 4px 4px 0 var(--swiss-black);
+    z-index: 110;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    animation: scaleUp 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .swiss-nav-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--swiss-border-thick);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .swiss-nav-mobile-title {
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--swiss-black);
+  }
+
+  .swiss-nav-mobile-close {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--swiss-black);
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+  }
+
+  .swiss-nav-mobile-close:hover {
+    color: var(--swiss-red);
+  }
+
+  .swiss-nav-mobile-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .swiss-nav-mobile-item {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    cursor: pointer;
+    color: var(--swiss-gray);
+    transition: all 0.2s ease;
+  }
+
+  .swiss-nav-mobile-item:hover {
+    color: var(--swiss-black);
+    background-color: var(--swiss-bg);
+  }
+
+  .swiss-nav-mobile-divider {
+    height: 2px;
+    background-color: var(--swiss-black);
+    margin: 0.5rem 0;
+  }
+
+  .swiss-nav-mobile-btn {
+    width: 100%;
+    background-color: var(--swiss-black);
+    color: var(--swiss-bg);
+    border: none;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0 var(--swiss-red);
+    text-align: center;
+  }
+
+  .swiss-nav-mobile-btn:hover {
+    background-color: var(--swiss-red);
+    color: var(--swiss-white);
+    box-shadow: 3px 3px 0 var(--swiss-black);
+  }
+
+  .swiss-hero-left {
+    padding: 3.5rem 1.5rem;
+  }
+  .swiss-hero-left h1 {
+    font-size: 2.8rem;
+  }
+  .swiss-hero-right {
+    padding: 3.5rem 1.5rem;
+  }
+  .swiss-hero-curved-graphic {
+    padding: 2.5rem 2rem;
+    border-radius: 50px 0 0 50px;
+  }
+  .swiss-features-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+  }
+  .swiss-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .swiss-feature-card {
+    border-right: none;
+    border-bottom: var(--swiss-border);
+    min-height: 280px;
+    padding: 3rem 1.5rem;
+  }
+  .swiss-feature-card:last-child {
+    border-bottom: none;
+  }
+  .swiss-steps-section {
+    padding: 4rem 1.5rem;
+  }
+  .swiss-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .swiss-step-card {
+    padding: 2rem 1.5rem;
+  }
+  .swiss-footer {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+}

@@ -29,7 +29,7 @@
    GEMINI_API_KEY=your_gemini_key_here
    GEMINI_MODEL=gemini-1.5-flash
    CLIENT_URL=http://localhost:5173
-   TRANSCRIPT_API=sk_t2GJTHTgIg3VvUr6tFDrXIeuSv9H9dxIx_Vud34ydqw
+   TRANSCRIPT_API=sk_t2GdEtHTgIg3VvUr6tFDradfrdrytIx_Vud34ydqw
    ```
 4. Start development server: `npm run dev`
 
